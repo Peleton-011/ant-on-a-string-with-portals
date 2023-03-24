@@ -45,7 +45,7 @@ class Node {
     }
 
     #generateTarget(maxLength) {
-        const target = Math.floor(Math.random() * (maxLength + 1));
+        const target = Math.floor(Math.random() * (maxLength)) + 1;
         return target;
     }
 }
