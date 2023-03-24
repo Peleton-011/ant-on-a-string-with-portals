@@ -10,15 +10,15 @@ function component() {
 
     const testNode = new Node()
 
-    let result = "";
-    for (let i = 0; i < 100; i++) {
-        const target = ` <br> ${testNode.testGenerateTarget(50)}`
-        result += target;
-    }
+    // let result = "";
+    // for (let i = 0; i < 100; i++) {
+    //     const target = ` <br> ${testNode.testGenerateTarget(50)}`
+    //     result += target;
+    // }
 
-    const node = new Node(10, true);
+    const string = StrGen.newString(4);
 
-    output.innerHTML = printObject(node);
+    output.innerHTML = printObject(string);
 
     element.appendChild(output);
 

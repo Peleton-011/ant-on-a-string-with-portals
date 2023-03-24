@@ -13,8 +13,9 @@ class StringGenerator {
     }
 
     #newNode(position) {
-        const isPortal = Math.random() > this.#portalChance ? true : false;
+        const isPortal = Math.random() > this.#portalChance ? false : true;
         const node = new Node(position, isPortal);
+        return node;
     }
 
     set portalChance(value) {
@@ -32,20 +33,21 @@ class Node {
     #maxLength;
 
     constructor(position, maxLength) {
-        this.position = position || null;
-        this.#maxLength = maxLength;
+        this.position = typeof position === "number" ? position : null;
+        this.#maxLength = typeof maxLength === "number" ? maxLength : null;
         this.portalTarget = maxLength ? this.#generateTarget(maxLength) : null;        
         if (maxLength === true) { 
+            console.log("maxLen is true at ", position)
             this.portalTarget = this.#generateTarget(position);
         }
     }
 
-    testGenerateTarget() {
-        return this.#generateTarget(...arguments) ;
-    }
+    // testGenerateTarget() {
+    //     return this.#generateTarget(...arguments) ;
+    // }
 
     #generateTarget(maxLength) {
-        const target = Math.floor(Math.random() * (maxLength)) + 1;
+        const target = clamp(Math.floor(Math.random() * (maxLength)) + 1, 0, maxLength);
         return target;
     }
 }
