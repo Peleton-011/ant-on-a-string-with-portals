@@ -6,7 +6,8 @@ function component() {
 
     // Lodash, now imported by this script
 
-    output.innerHTML = StringGenerator.newString(3);
+    const StrGen = new StringGenerator();
+    output.innerHTML = StrGen.newString();
 
     element.appendChild(output);
 

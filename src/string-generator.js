@@ -2,8 +2,8 @@
 class StringGenerator {
     
     newString() {
-        return;
+        return "Hmm... Testy testy...";
     }
 }
 
-export default { StringGenerator }
+export { StringGenerator }
