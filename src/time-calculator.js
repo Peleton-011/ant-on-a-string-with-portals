@@ -12,16 +12,22 @@ function getLength(string) {
     return totalLength - 1;
 
     function next() {
+        openPortals.forEach((portal) => {
+            if ((pointer = portal.pos)) {
+                totalLength += totalLength - portal.originLen;
+            }
+        });
+
         const target = string[pointer].portalTarget;
         //If it has no target, just move
         if (!target) return move();
 
-        //If the portal is open, close it and move to the target
-        pointer = pointer - target;
+        //If it's a portal
+        openPortals.push({ pos: pointer - target, originLen: totalLength });
     }
 
     function move() {
-        pointer += 1;
+        pointer -= 1;
         totalLength += 1;
     }
 }
