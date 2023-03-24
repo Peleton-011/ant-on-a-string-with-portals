@@ -4,35 +4,42 @@ class StringGenerator {
     newString(length) {
         const string = [];
 
+        //Add the Nodes
         for (let i = 0; i < length; i++) {
-            this.#newNode();
+            string.push(this.#newNode(i));
         }
 
-        return "Hmm... Testy testy...";
+        return string;
     }
 
-    #newNode() {}
+    #newNode(position) {
+        const isPortal = Math.random() > this.#portalChance ? true : false;
+        const node = new Node(position, isPortal);
+    }
 
     set portalChance(value) {
-        this.#portalChance =
-            value > 1 ? 
-            1 : 
-            value < 0 ? 
-                0 : 
-                value ? 
-                    value : 
-                    this.#portalChance;
+        this.#portalChance = clamp(value, 0, 1);
+    }
+
+    get portalChance() {
+        return this.#portalChance;
     }
 }
 
 class Node {
     #position;
     #portalTarget;
+    #maxLength;
 
-    constructor(position, portalTarget) {
+    constructor(position, maxLength) {
         this.#position = position || null;
-        this.#portalTarget = portalTarget || null;
+        this.#maxLength = maxLength;
+        this.#portalTarget = maxLength ? this.#generateTarget(maxLength) : null;        
     }
+
+    #generateTarget() {}
 }
+
+const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
 export { StringGenerator };
