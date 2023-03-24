@@ -1,5 +1,5 @@
-import {StringGenerator, Node} from "./string-generator.js";
-import { drawNode, drawString } from "./components/dom-node"
+import { StringGenerator, Node } from "./string-generator.js";
+import { drawNode, drawString } from "./components/dom-node";
 
 function component() {
     const element = document.createElement("div");
@@ -9,7 +9,7 @@ function component() {
 
     const StrGen = new StringGenerator();
 
-    const testNode = new Node()
+    const testNode = new Node();
 
     // let result = "";
     // for (let i = 0; i < 100; i++) {
@@ -17,20 +17,20 @@ function component() {
     //     result += target;
     // }
 
-    const string = StrGen.newString(4);
+    const string = StrGen.newString(10);
 
-    output.innerHTML = drawString(string);
+    output.innerHTML = printObject(string);
 
+    output.appendChild(drawString(string));
     element.appendChild(output);
-
 
     return element;
 }
 
 function printObject(object) {
     console.log(object);
-    console.log (JSON.stringify(object,null, 4))
-    return JSON.stringify(object,null, 4)
+    console.log(JSON.stringify(object, null, 4));
+    return JSON.stringify(object, null, 4);
 }
 
 document.body.appendChild(component());
