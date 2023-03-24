@@ -2,14 +2,13 @@ import {StringGenerator} from "./string-generator.js";
 
 function component() {
     const element = document.createElement("div");
-    const btn = document.createElement("button");
+    const output = document.createElement("p");
 
     // Lodash, now imported by this script
 
-    btn.innerHTML = "Click me and check the console";
-    btn.onclick = StringGenerator;
+    output.innerHTML = StringGenerator.newString(3);
 
-    element.appendChild(btn);
+    element.appendChild(output);
 
 
     return element;
