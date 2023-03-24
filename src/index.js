@@ -10,9 +10,9 @@ function component() {
 
     const node = new Node()
 
-    let result;
+    let result = "";
     for (let i = 0; i < 100; i++) {
-        const target = ` \n ${node.testGenerateTarget(50)}`
+        const target = ` <br> ${node.testGenerateTarget(50)}`
         result += target;
     }
 

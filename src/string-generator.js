@@ -40,12 +40,13 @@ class Node {
         }
     }
 
-    testGenerateTarget(args) {
-        return this.#generateTarget(...args);
+    testGenerateTarget() {
+        return this.#generateTarget(...arguments) ;
     }
 
     #generateTarget(maxLength) {
-        return Math.floor(Math.random() * maxLength);
+        const target = Math.floor(Math.random() * (maxLength + 1));
+        return target;
     }
 }
 
