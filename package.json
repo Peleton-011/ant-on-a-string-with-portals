@@ -1,0 +1,19 @@
+{
+  "name": "ant-on-a-string-with-portals",
+  "version": "1.0.0",
+  "description": "An ant on a string with portals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Peleton-011/ant-on-a-string-with-portals.git"
+  },
+  "author": "Nico Diaz",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Peleton-011/ant-on-a-string-with-portals/issues"
+  },
+  "homepage": "https://github.com/Peleton-011/ant-on-a-string-with-portals#readme"
+}
