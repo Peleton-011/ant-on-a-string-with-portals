@@ -1,5 +1,29 @@
 function getLength(string) {
-    return 5;
+    let pointer = string.length;
+    let totalLength = 0;
+
+    const openPortals = [];
+
+    //While not at End of String, keep iterating
+    while (pointer < string.length) {
+        next();
+    }
+
+    return totalLength - 1;
+
+    function next() {
+        const target = string[pointer].portalTarget;
+        //If it has no target, just move
+        if (!target) return move();
+
+        //If the portal is open, close it and move to the target
+        pointer = pointer - target;
+    }
+
+    function move() {
+        pointer += 1;
+        totalLength += 1;
+    }
 }
 
 function slowGetLength(string) {
