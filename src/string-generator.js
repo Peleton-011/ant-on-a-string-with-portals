@@ -1,5 +1,5 @@
 class StringGenerator {
-    #portalChance = 0.1;
+    #portalChance = 0.2;
 
     newString(length) {
         const string = [];
@@ -30,6 +30,7 @@ class StringGenerator {
 class Node {
     position;
     portalTarget;
+    isOpen = true;
     #maxLength;
 
     constructor(position, maxLength) {
