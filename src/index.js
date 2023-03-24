@@ -1,4 +1,4 @@
-import printMe from "./print.js";
+import {StringGenerator} from "./string-generator.js";
 
 function component() {
     const element = document.createElement("div");
@@ -7,7 +7,7 @@ function component() {
     // Lodash, now imported by this script
 
     btn.innerHTML = "Click me and check the console";
-    btn.onclick = printMe;
+    btn.onclick = StringGenerator;
 
     element.appendChild(btn);
 
