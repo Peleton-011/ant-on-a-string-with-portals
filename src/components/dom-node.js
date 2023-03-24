@@ -26,4 +26,4 @@ function drawString(string) {
     return domString;
 }
 
-export { drawNode, domString };
+export { drawNode, drawString };
