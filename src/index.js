@@ -1,4 +1,5 @@
 import {StringGenerator, Node} from "./string-generator.js";
+import { drawNode, drawString } from "./components/dom-node"
 
 function component() {
     const element = document.createElement("div");
@@ -18,7 +19,7 @@ function component() {
 
     const string = StrGen.newString(4);
 
-    output.innerHTML = printObject(string);
+    output.innerHTML = drawString(string);
 
     element.appendChild(output);
 
