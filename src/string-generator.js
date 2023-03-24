@@ -35,6 +35,13 @@ class Node {
         this.#position = position || null;
         this.#maxLength = maxLength;
         this.#portalTarget = maxLength ? this.#generateTarget(maxLength) : null;        
+        if (maxLength === true) { 
+            this.#portalTarget = this.#generateTarget(position);
+        }
+    }
+
+    testGenerateTarget(args) {
+        return this.#generateTarget(...args);
     }
 
     #generateTarget(maxLength) {
@@ -44,4 +51,4 @@ class Node {
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
-export { StringGenerator };
+export { StringGenerator, Node };
