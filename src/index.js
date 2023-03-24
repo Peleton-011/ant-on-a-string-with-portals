@@ -1,6 +1,6 @@
 import { StringGenerator, Node } from "./string-generator.js";
 import { drawNode, drawString } from "./components/dom-node";
-import {getLength, slowGetLength} from "./time-calculator"
+import { getLength, slowGetLength } from "./time-calculator";
 
 function component() {
     const element = document.createElement("div");

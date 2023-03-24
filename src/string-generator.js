@@ -36,9 +36,9 @@ class Node {
     constructor(position, maxLength) {
         this.position = typeof position === "number" ? position : null;
         this.#maxLength = typeof maxLength === "number" ? maxLength : null;
-        this.portalTarget = maxLength ? this.#generateTarget(maxLength) : null;        
-        if (maxLength === true) { 
-            console.log("maxLen is true at ", position)
+        this.portalTarget = maxLength ? this.#generateTarget(maxLength) : null;
+        if (maxLength === true) {
+            console.log("maxLen is true at ", position);
             this.portalTarget = this.#generateTarget(position);
         }
     }
@@ -48,7 +48,11 @@ class Node {
     // }
 
     #generateTarget(maxLength) {
-        const target = clamp(Math.floor(Math.random() * (maxLength)) + 1, 0, maxLength);
+        const target = clamp(
+            Math.floor(Math.random() * maxLength) + 1,
+            0,
+            maxLength
+        );
         return target;
     }
 }
