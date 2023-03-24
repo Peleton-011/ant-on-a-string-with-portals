@@ -8,20 +8,28 @@ function component() {
 
     const StrGen = new StringGenerator();
 
-    const node = new Node()
+    const testNode = new Node()
 
     let result = "";
     for (let i = 0; i < 100; i++) {
-        const target = ` <br> ${node.testGenerateTarget(50)}`
+        const target = ` <br> ${testNode.testGenerateTarget(50)}`
         result += target;
     }
 
-    output.innerHTML = result;
+    const node = new Node(10, true);
+
+    output.innerHTML = printObject(node);
 
     element.appendChild(output);
 
 
     return element;
+}
+
+function printObject(object) {
+    console.log(object);
+    console.log (JSON.stringify(object,null, 4))
+    return JSON.stringify(object,null, 4)
 }
 
 document.body.appendChild(component());

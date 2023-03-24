@@ -27,16 +27,16 @@ class StringGenerator {
 }
 
 class Node {
-    #position;
-    #portalTarget;
+    position;
+    portalTarget;
     #maxLength;
 
     constructor(position, maxLength) {
-        this.#position = position || null;
+        this.position = position || null;
         this.#maxLength = maxLength;
-        this.#portalTarget = maxLength ? this.#generateTarget(maxLength) : null;        
+        this.portalTarget = maxLength ? this.#generateTarget(maxLength) : null;        
         if (maxLength === true) { 
-            this.#portalTarget = this.#generateTarget(position);
+            this.portalTarget = this.#generateTarget(position);
         }
     }
 
