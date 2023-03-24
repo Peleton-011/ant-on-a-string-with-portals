@@ -37,7 +37,9 @@ class Node {
         this.#portalTarget = maxLength ? this.#generateTarget(maxLength) : null;        
     }
 
-    #generateTarget() {}
+    #generateTarget(maxLength) {
+        return Math.floor(Math.random() * maxLength);
+    }
 }
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
