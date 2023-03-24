@@ -1,25 +1,19 @@
-function getLength() {}
+function getLength(string) {
+    return 5;
+}
 
 function slowGetLength(string) {
-    console.log("Calculating: ", JSON.stringify(string, null, 2));
     let pointer = 0;
     let totalLength = 0;
 
-    let iterator;
-
     //While not at End of String, keep iterating
-    while (iterator !== "EOS") {
-        iterator = next();
+    while (pointer < string.length) {
+        next();
     }
 
     return totalLength - 1;
 
     function next() {
-        //Check if we have reached the end
-        if (pointer >= string.length) {
-            return "EOS";
-        }
-
         const target = string[pointer].portalTarget;
         //If it has no target, just move
         if (!target) return move();

@@ -26,6 +26,8 @@ function component() {
     element.appendChild(output);
 
     output.innerHTML += slowGetLength(string);
+    output.innerHTML += "<br>";
+    output.innerHTML += getLength(string);
 
     return element;
 }
